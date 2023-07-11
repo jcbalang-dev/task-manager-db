@@ -1,3 +1,6 @@
 # task-manager-db
+
+# create python virtual environment
+  `python -m venv .venv`
 # install all dev libraries
-1.) pip install -r requirements.txt
+  `pip install -r requirements.txt`

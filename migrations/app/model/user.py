@@ -23,7 +23,7 @@ class User(Base):
     middle_name = Column(VARCHAR(100))
     username = Column(VARCHAR(100))
     email = Column(VARCHAR(255))
-    password = Column(VARCHAR(250))
+    password = Column(VARCHAR(50))
     contact_number = Column(VARCHAR(20))
     status = Column(Enum('free', 'basic', 'starter', 'premium'))
     created_at = Column(DATETIME, server_default=sa.text("CURRENT_TIMESTAMP"), nullable=False)

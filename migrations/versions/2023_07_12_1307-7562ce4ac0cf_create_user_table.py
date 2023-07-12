@@ -20,10 +20,11 @@ def upgrade() -> None:
     op.create_table(
         'user',
         sa.Column('id', sa.BIGINT(), nullable=False, primary_key=True),
+        sa.Column('role_id', sa.BIGINT(), sa.ForeignKey('role.id', ondelete='CASCADE', onupdate='CASCADE')),
         sa.Column('last_name', sa.VARCHAR(length=100)),
         sa.Column('first_name', sa.VARCHAR(length=50)),
         sa.Column('middle_name', sa.VARCHAR(length=100)),
-        sa.Column('username', sa.VARCHAR(length=100)),
+        sa.Column('user_name', sa.VARCHAR(length=100)),
         sa.Column('email', sa.VARCHAR(length=255)),
         sa.Column('password', sa.VARCHAR(length=250)),
         sa.Column('contact_number', sa.VARCHAR(length=20)),

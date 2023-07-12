@@ -1,19 +1,16 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, ForeignKey, Enum, Table
+
+from sqlalchemy import Column, ForeignKey, Enum
+
 from sqlalchemy.dialects.mysql import BIGINT, VARCHAR, DATETIME
+
 from sqlalchemy.orm import relationship
 
 import sqlalchemy as sa
+
 from role import Role
 
 Base = declarative_base()
-
-user_role_association = Table(
-    'user_role_association',
-    Base.metadata,
-    Column('user_id', BIGINT, ForeignKey('user.id', ondelete='CASCADE', onupdate='CASCADE')),
-    Column('role_id', BIGINT, ForeignKey('role.id', ondelete='CASCADE', onupdate='CASCADE'))
-)
 
 class User(Base):
     __tablename__ = 'user'

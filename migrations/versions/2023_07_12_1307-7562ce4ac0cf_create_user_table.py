@@ -33,13 +33,6 @@ def upgrade() -> None:
         sa.Column('updated_at', sa.DATETIME(), nullable=False, server_default=sa.text("CURRENT_TIMESTAMP")),
     )
 
-    op.create_table(
-        'user_role_association',
-        sa.Column('user_id', sa.BIGINT(), sa.ForeignKey('user.id', ondelete='CASCADE', onupdate='CASCADE')),
-        sa.Column('role_id', sa.BIGINT(), sa.ForeignKey('role.id', ondelete='CASCADE', onupdate='CASCADE'))
-    )
-
 def downgrade() -> None:
-    op.drop_table('user_role_association')
     op.drop_table('role')
     op.drop_table('user')

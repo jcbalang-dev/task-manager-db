@@ -7,3 +7,5 @@
   close the terminal then press ctrl + shift + p then select python interpreter venv then open it again
 # install all dev libraries
   `pip install -r requirements.txt`
+# create .env
+  `cp .env.example .env`

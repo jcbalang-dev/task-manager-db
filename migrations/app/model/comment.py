@@ -18,6 +18,12 @@ class Task(Base):
     id = Column(BIGINT, nullable=False, primary_key=True)
     task_id = relationship("Task", back_populates="task_id", foreign_keys='Task.id')
 
+class Activity(Base):
+    __tablename__ = 'activity'
+    
+    id = Column(BIGINT, nullable=False, primary_key=True)
+    activity_id = relationship("Activity", back_populates="activty_id", foreign_keys='Activity.id')
+
 class Comment(Base):
     __tablename__ = 'comment'
 

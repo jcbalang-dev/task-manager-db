@@ -12,6 +12,12 @@ from migrations.app.model import Task, Activity
 
 Base = declarative_base()
 
+class Task(Base):
+    __tablename__ = 'task'
+    
+    id = Column(BIGINT, nullable=False, primary_key=True)
+    task_id = relationship("Task", back_populates="task_id", foreign_keys='Task.id')
+
 class Comment(Base):
     __tablename__ = 'comment'
 

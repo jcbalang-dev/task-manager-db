@@ -12,10 +12,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-db_host = os.getenv("DB_HOST")
-db_user = os.getenv("DB_USER")
-db_password = os.getenv("DB_PASSWORD")
-db_name = os.getenv("DB_NAME")
+db_host = Config.DB_HOST
+db_user = Config.DB_USER
+db_password = Config.DB_PASSWORD
+db_name = Config.DB_DATABASE
 
 # Alembic Config object
 config = context.config

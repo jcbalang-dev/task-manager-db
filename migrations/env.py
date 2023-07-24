@@ -6,6 +6,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
+from migrations.config import Config
+
 import os
 
 from dotenv import load_dotenv
